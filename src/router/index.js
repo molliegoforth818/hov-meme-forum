@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Create from "../views/Create.vue"
 import Details from "../views/Details.vue"
 import Feed from "../views/Feed.vue"
+
 Vue.use(VueRouter);
 
 const routes = [

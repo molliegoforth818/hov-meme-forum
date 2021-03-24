@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Meme from "../components/Meme"
 export default {
   data() {
     return {

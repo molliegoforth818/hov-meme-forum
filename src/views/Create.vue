@@ -75,7 +75,6 @@ export default {
     generateMeme() {
       this.showMeme = true;
     },
-  },
   async saveMeme() {
     await db.collection("memes").add({
       topText: this.topText,
@@ -83,7 +82,9 @@ export default {
       imageURL: this.imageURL,
       normalized: `${this.topText.toUpperCase()} ${this.bottomText.toUpperCase()}`,
     });
+    this.$router.push("/feed");
   },
+}
 };
 </script>
 

@@ -1,25 +1,15 @@
 # meme-forum
 
-## Project setup
+## Project Learning Objectives
 ```
-npm install
+- Define multiple routes in an application
+- Use the router-view and router-link components to allow users to navigate an app with multiple routes
+- Use the $router.push method to programmatically navigate users from your JS code
+- Access route parameters in your component
+
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Check it out!
+https://hov-meme-forum.web.app/feed
 # hov-meme-forum

@@ -1,9 +1,13 @@
 <template>
-  <h1>Home</h1>
+  <h1> what ever could you meme? </h1>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style>
+h1 {
+text-align: center;
+}
+</style>

@@ -6,7 +6,7 @@
 - Use the router-view and router-link components to allow users to navigate an app with multiple routes
 - Use the $router.push method to programmatically navigate users from your JS code
 - Access route parameters in your component
-
+- Use firebase to create a simple authentication flow
 ```
 
 

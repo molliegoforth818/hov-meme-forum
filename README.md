@@ -11,5 +11,5 @@
 
 
 ### Check it out!
-https://hov-meme-forum.web.app/feed
+https://hov-meme-forum.web.app/
 # hov-meme-forum

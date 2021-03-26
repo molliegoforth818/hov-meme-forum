@@ -1,5 +1,5 @@
 <template>
-  <h1> what ever could you meme? </h1>
+  <h1 class="py-12 green--text"> what ever could you meme? </h1>
 </template>
 
 <script>

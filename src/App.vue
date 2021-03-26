@@ -2,17 +2,19 @@
   <v-app>
     <v-app-bar app color="green lighten-3" dark>
       <router-link to="/">
-  <v-btn text> Vue Meme Forum </v-btn>
-</router-link>
-  <v-spacer></v-spacer>
-  <router-link to="/create">
-  <v-btn text> Create </v-btn>
-</router-link>
-|
-<router-link to="/feed">
-  <v-btn text> Memes </v-btn>
-</router-link>
-</v-app-bar>
+        <v-btn text> Vue Meme Forum </v-btn>
+      </router-link>
+      <v-spacer></v-spacer>
+      <router-link to="/create">
+        <v-btn text> Create </v-btn>
+      </router-link>
+      |
+      <router-link to="/feed">
+        <v-btn text> Memes </v-btn>
+      </router-link>
+      <v-btn v-if="user" text @click="signOut">Sign Out </v-btn>
+      <v-btn v-else text @click="signIn"> Sign In </v-btn>
+    </v-app-bar>
 
     <v-main>
       <router-view></router-view>
@@ -21,7 +23,31 @@
 </template>
 
 <script>
-export default {};
+import { signIn, signOut, auth } from "./firebase";
+
+export default {
+  data() {
+    return {
+      user: auth.currentUser,
+    };
+  },
+  mounted() {
+    auth.onAuthStateChanged((user) => {
+      this.user = user;
+    });
+  },
+  methods: {
+    signIn() {
+      signIn();
+    },
+    signOut() {
+      signOut();
+      if (this.$route.path !== "/") {
+        this.$router.push("/");
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

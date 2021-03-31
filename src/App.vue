@@ -5,12 +5,16 @@
         <v-btn text> Vue Meme Forum </v-btn>
       </router-link>
       <v-spacer></v-spacer>
+      <router-link v-if="user" to="/my-memes">
+        <v-btn text> My Memes </v-btn>
+      </router-link>
+      <span v-if="user">|</span>
       <router-link to="/create">
         <v-btn text> Create </v-btn>
       </router-link>
       |
       <router-link to="/feed">
-        <v-btn text> Memes </v-btn>
+        <v-btn text> Feed </v-btn>
       </router-link>
       <v-btn v-if="user" text @click="signOut">Sign Out </v-btn>
       <v-btn v-else text @click="signIn"> Sign In </v-btn>

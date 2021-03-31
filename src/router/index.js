@@ -5,12 +5,13 @@ import Create from "../views/Create.vue"
 import Details from "../views/Details.vue"
 import Feed from "../views/Feed.vue"
 import MyMemes from "../views/MyMemes"
+import { auth } from "../firebase"
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
+{
+  path: "/",
     name: "Home",
     component: Home,
   },
@@ -18,6 +19,16 @@ const routes = [
     path: "/create",
     name: "Create",
     component: Create,
+    beforeEnter: (to, from, next) => {
+      if (!auth.currentUser) {
+        return next({
+          path: "/",
+          query: { unauthorized: true },
+        });
+      } else {
+        return next();
+      }
+    }
   },
   {
     path: "/meme/:memeId",
@@ -32,7 +43,17 @@ const routes = [
   {
     path: "/my-memes",
     name: "MyMemes",
-    component: MyMemes
+    component: MyMemes,
+    beforeEnter: (to, from, next) => {
+      if (!auth.currentUser) {
+        return next({
+          path: "/",
+          query: { unauthorized: true },
+        });
+      } else {
+        return next();
+      }
+    },
   }
 ];
 
